@@ -26,15 +26,15 @@ export default function EquipoPage() {
               <Link href="/" className="text-foreground hover:text-primary transition-colors font-medium">
                 Inicio
               </Link>
-              <a href="/#features" className="text-foreground hover:text-primary transition-colors font-medium">
+              <Link href="/#features" className="text-foreground hover:text-primary transition-colors font-medium">
                 Características
-              </a>
-              <a href="/#mision" className="text-foreground hover:text-primary transition-colors font-medium">
+              </Link>
+              <Link href="/#mision" className="text-foreground hover:text-primary transition-colors font-medium">
                 Misión
-              </a>
-              <a href="/#contact" className="text-foreground hover:text-primary transition-colors font-medium">
+              </Link>
+              <Link href="/#contact" className="text-foreground hover:text-primary transition-colors font-medium">
                 Contacto
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
