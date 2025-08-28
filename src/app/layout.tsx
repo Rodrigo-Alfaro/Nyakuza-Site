@@ -1,36 +1,31 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css";
+import type React from "react"
+import type { Metadata } from "next"
+import { GeistSans } from "geist/font/sans"
+import { GeistMono } from "geist/font/mono"
+import { Montserrat } from "next/font/google"
+import "./globals.css"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const montserrat = Montserrat({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  display: "swap",
+  variable: "--font-montserrat",
+  weight: ["400", "600", "700", "900"],
+})
 
 export const metadata: Metadata = {
-  title: "Nyakuza - Recruitment",
-  description: "Join the Nyakuza community",
-};
+  title: "Sequens - Gestor de Incubadoras de Negocios",
+  description:
+    "Plataforma innovadora para la gestión eficiente de incubadoras de negocios. Automatiza documentación, contratos y seguimiento de proyectos.",
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-        <Analytics />
-      </body>
+    <html lang="es">
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${montserrat.variable}`}>{children}</body>
     </html>
-  );
+  )
 }
