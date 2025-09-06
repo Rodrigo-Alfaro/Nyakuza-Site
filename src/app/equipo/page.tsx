@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Users, Github, Linkedin, Mail, ArrowLeft } from "lucide-react"
+import Image from "next/image"
+import { Users, Linkedin, Mail, Phone, MapPin, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 
 export default function EquipoPage() {
@@ -12,22 +13,29 @@ export default function EquipoPage() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">S</span>
+              <div className="w-64 h-15 flex items-center justify-center">
+                <Image src="/sequence_hor.png" alt="Sequens Logo" width={10000} height={9000} className="rounded-lg object-cover" />
               </div>
               <div>
-                <h1 className="text-2xl font-black font-[family-name:var(--font-montserrat)] text-foreground">
-                  Sequens
-                </h1>
                 <p className="text-sm text-muted-foreground">Feria del Software 2025</p>
               </div>
             </Link>
+            
+            {/* Center Logo */}
+            <div className="hidden md:flex items-center justify-center">
+              <div className="w-16 h-16 flex items-center justify-center">
+                <Link href="https://www.feriadesoftware.cl/" className="flex items-center space-x-4">
+                  <Image src="/ferialogo.png" alt="Feria Logo" width={64} height={64} className="object-contain" />
+                </Link>
+              </div>
+            </div>
+            
             <nav className="hidden md:flex items-center space-x-6">
-              <Link href="/" className="text-foreground hover:text-primary transition-colors font-medium">
-                Inicio
-              </Link>
               <Link href="/#features" className="text-foreground hover:text-primary transition-colors font-medium">
                 Características
+              </Link>
+              <Link href="/equipo" className="text-foreground hover:text-primary transition-colors font-medium">
+                Equipo
               </Link>
               <Link href="/#mision" className="text-foreground hover:text-primary transition-colors font-medium">
                 Misión
@@ -53,10 +61,13 @@ export default function EquipoPage() {
         <div className="container mx-auto text-center">
           <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">Nuestro Equipo</Badge>
           <h1 className="text-5xl md:text-6xl font-black font-[family-name:var(--font-montserrat)] text-foreground mb-6 text-balance">
-            Conoce al Equipo de <span className="text-primary">Sequens</span>
+            Conoce al Equipo de
           </h1>
+          <div className="mb-6 flex justify-center">
+            <Image src="/SequensConLetra 1.svg" alt="Sequens con Letra" width={150} height={50} className="object-contain" />
+          </div>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty">
-            Profesionales apasionados por la innovación y la transformación digital, comprometidos con revolucionar la
+            Estudiantes apasionados por la innovación y la transformación digital, comprometidos con revolucionar la
             gestión de incubadoras de negocios.
           </p>
         </div>
@@ -72,27 +83,22 @@ export default function EquipoPage() {
                 <div className="w-32 h-32 bg-gradient-to-br from-accent to-primary rounded-full mx-auto mb-6 flex items-center justify-center">
                   <Users className="w-16 h-16 text-white" />
                 </div>
-                <CardTitle className="font-[family-name:var(--font-montserrat)] text-xl">Ana García</CardTitle>
-                <CardDescription className="text-primary font-medium">
-                  Líder de Proyecto & Full Stack Developer
+                <CardTitle className="font-[family-name:var(--font-montserrat)] text-xl">Nicolás Salas</CardTitle>
+                <CardDescription className="text-primary font-medium mb-6">
+                  Encargado de Testing 
                 </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Especialista en arquitectura de software y gestión de proyectos. Experta en React, Node.js y sistemas
-                  de gestión empresarial.
-                </p>
-                <div className="flex justify-center space-x-4">
-                  <Button variant="outline" size="sm">
-                    <Github className="w-4 h-4 mr-2" />
-                    GitHub
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    <Linkedin className="w-4 h-4 mr-2" />
+                <Button asChild variant="outline" size="lg" className="w-full">
+                  <a
+                    href="https://www.linkedin.com/in/nicolas-salas-mondragon/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center"
+                  >
+                    <Linkedin className="w-5 h-5 mr-2" />
                     LinkedIn
-                  </Button>
-                </div>
-              </CardContent>
+                  </a>
+                </Button>
+              </CardHeader>
             </Card>
 
             {/* Team member 2 */}
@@ -101,25 +107,20 @@ export default function EquipoPage() {
                 <div className="w-32 h-32 bg-gradient-to-br from-secondary to-primary rounded-full mx-auto mb-6 flex items-center justify-center">
                   <Users className="w-16 h-16 text-white" />
                 </div>
-                <CardTitle className="font-[family-name:var(--font-montserrat)] text-xl">Carlos Mendoza</CardTitle>
-                <CardDescription className="text-primary font-medium">Backend Developer & DevOps</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Experto en desarrollo backend, bases de datos y infraestructura cloud. Especializado en automatización
-                  y escalabilidad de sistemas.
-                </p>
-                <div className="flex justify-center space-x-4">
-                  <Button variant="outline" size="sm">
-                    <Github className="w-4 h-4 mr-2" />
-                    GitHub
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    <Linkedin className="w-4 h-4 mr-2" />
+                <CardTitle className="font-[family-name:var(--font-montserrat)] text-xl">Rodolfo Osorio</CardTitle>
+                <CardDescription className="text-primary font-medium mb-6">Backend Scrum Master</CardDescription>
+                <Button asChild variant="outline" size="lg" className="w-full">
+                  <a
+                    href="https://www.linkedin.com/in/rodolfo-osorio-verdejo-271275238/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center"
+                  >
+                    <Linkedin className="w-5 h-5 mr-2" />
                     LinkedIn
-                  </Button>
-                </div>
-              </CardContent>
+                  </a>
+                </Button>
+              </CardHeader>
             </Card>
 
             {/* Team member 3 */}
@@ -128,27 +129,22 @@ export default function EquipoPage() {
                 <div className="w-32 h-32 bg-gradient-to-br from-primary to-accent rounded-full mx-auto mb-6 flex items-center justify-center">
                   <Users className="w-16 h-16 text-white" />
                 </div>
-                <CardTitle className="font-[family-name:var(--font-montserrat)] text-xl">María Rodriguez</CardTitle>
-                <CardDescription className="text-primary font-medium">
-                  Frontend Developer & UX/UI Designer
+                <CardTitle className="font-[family-name:var(--font-montserrat)] text-xl">Matías Guerra</CardTitle>
+                <CardDescription className="text-primary font-medium mb-6">
+                  Product Owner & Encargado de Tecnologias
                 </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Diseñadora UX/UI y desarrolladora frontend. Especialista en crear experiencias de usuario intuitivas y
-                  interfaces modernas.
-                </p>
-                <div className="flex justify-center space-x-4">
-                  <Button variant="outline" size="sm">
-                    <Github className="w-4 h-4 mr-2" />
-                    GitHub
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    <Linkedin className="w-4 h-4 mr-2" />
+                <Button asChild variant="outline" size="lg" className="w-full">
+                  <a
+                    href="https://www.linkedin.com/in/mat%C3%ADas-guerra-valles-2b8a49349/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center"
+                  >
+                    <Linkedin className="w-5 h-5 mr-2" />
                     LinkedIn
-                  </Button>
-                </div>
-              </CardContent>
+                  </a>
+                </Button>
+              </CardHeader>
             </Card>
 
             {/* Team member 4 */}
@@ -157,25 +153,20 @@ export default function EquipoPage() {
                 <div className="w-32 h-32 bg-gradient-to-br from-accent to-secondary rounded-full mx-auto mb-6 flex items-center justify-center">
                   <Users className="w-16 h-16 text-white" />
                 </div>
-                <CardTitle className="font-[family-name:var(--font-montserrat)] text-xl">Diego Silva</CardTitle>
-                <CardDescription className="text-primary font-medium">Data Analyst & QA Engineer</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Analista de datos y especialista en control de calidad. Experto en testing automatizado y análisis de
-                  métricas de negocio.
-                </p>
-                <div className="flex justify-center space-x-4">
-                  <Button variant="outline" size="sm">
-                    <Github className="w-4 h-4 mr-2" />
-                    GitHub
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    <Linkedin className="w-4 h-4 mr-2" />
+                <CardTitle className="font-[family-name:var(--font-montserrat)] text-xl">Ignacio Arcos</CardTitle>
+                <CardDescription className="text-primary font-medium mb-6">Encargado de Diseño & UX</CardDescription>
+                <Button asChild variant="outline" size="lg" className="w-full">
+                  <a
+                    href="https://www.linkedin.com/in/ignacio-arcos-mu%C3%B1oz-860516340/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center"
+                  >
+                    <Linkedin className="w-5 h-5 mr-2" />
                     LinkedIn
-                  </Button>
-                </div>
-              </CardContent>
+                  </a>
+                </Button>
+              </CardHeader>
             </Card>
 
             {/* Team member 5 */}
@@ -184,25 +175,20 @@ export default function EquipoPage() {
                 <div className="w-32 h-32 bg-gradient-to-br from-secondary to-accent rounded-full mx-auto mb-6 flex items-center justify-center">
                   <Users className="w-16 h-16 text-white" />
                 </div>
-                <CardTitle className="font-[family-name:var(--font-montserrat)] text-xl">Laura Vásquez</CardTitle>
-                <CardDescription className="text-primary font-medium">Business Analyst & Product Owner</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Analista de negocios con experiencia en incubadoras. Especialista en definición de requerimientos y
-                  gestión de producto.
-                </p>
-                <div className="flex justify-center space-x-4">
-                  <Button variant="outline" size="sm">
-                    <Github className="w-4 h-4 mr-2" />
-                    GitHub
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    <Linkedin className="w-4 h-4 mr-2" />
+                <CardTitle className="font-[family-name:var(--font-montserrat)] text-xl">Ignacio Muñoz</CardTitle>
+                <CardDescription className="text-primary font-medium mb-6">Encargado de Marketing & Comunicaciones</CardDescription>
+                <Button asChild variant="outline" size="lg" className="w-full">
+                  <a
+                    href="https://www.linkedin.com/in/ignacio-mu%C3%B1oz-ulloa-55076a33a/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center"
+                  >
+                    <Linkedin className="w-5 h-5 mr-2" />
                     LinkedIn
-                  </Button>
-                </div>
-              </CardContent>
+                  </a>
+                </Button>
+              </CardHeader>
             </Card>
 
             {/* Team member 6 */}
@@ -211,27 +197,22 @@ export default function EquipoPage() {
                 <div className="w-32 h-32 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-6 flex items-center justify-center">
                   <Users className="w-16 h-16 text-white" />
                 </div>
-                <CardTitle className="font-[family-name:var(--font-montserrat)] text-xl">Roberto Herrera</CardTitle>
-                <CardDescription className="text-primary font-medium">
-                  Security Engineer & System Administrator
+                <CardTitle className="font-[family-name:var(--font-montserrat)] text-xl">Rodrigo Alfaro</CardTitle>
+                <CardDescription className="text-primary font-medium mb-6">
+                  Desarrollador Backend
                 </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Ingeniero de seguridad y administrador de sistemas. Especialista en ciberseguridad y protección de
-                  datos empresariales.
-                </p>
-                <div className="flex justify-center space-x-4">
-                  <Button variant="outline" size="sm">
-                    <Github className="w-4 h-4 mr-2" />
-                    GitHub
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    <Linkedin className="w-4 h-4 mr-2" />
+                <Button asChild variant="outline" size="lg" className="w-full">
+                  <a
+                    href="https://www.linkedin.com/in/rodrigo-alfaro-olmos-123976314/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center"
+                  >
+                    <Linkedin className="w-5 h-5 mr-2" />
                     LinkedIn
-                  </Button>
-                </div>
-              </CardContent>
+                  </a>
+                </Button>
+              </CardHeader>
             </Card>
           </div>
         </div>
@@ -283,83 +264,80 @@ export default function EquipoPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-primary text-primary-foreground">
-        <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-black font-[family-name:var(--font-montserrat)] mb-4">
-            ¿Quieres Formar Parte del Equipo?
-          </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Estamos siempre buscando talento apasionado por la tecnología y la innovación.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8">
-              <Mail className="w-5 h-5 mr-2" />
-              Contáctanos
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-            >
-              Ver Oportunidades
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 bg-card border-t">
+      <footer id="contact" className="py-12 px-4 bg-card border-t">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold">S</span>
+              <Link href="/" className="flex items-center space-x-2 mb-4">
+                <div className="w-90 h-12 flex items-center justify-center">
+                  <Image src="/sequence_hor.png" alt="Sequens Logo" width={720} height={100} className="object-contain" />
                 </div>
-                <span className="text-xl font-black font-[family-name:var(--font-montserrat)]">Sequens</span>
-              </div>
-              <p className="text-muted-foreground mb-4">
+              </Link>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
                 Transformando la gestión de incubadoras de negocios con tecnología innovadora.
               </p>
               <Badge variant="outline">Feria del Software 2025</Badge>
             </div>
 
             <div>
+              <h3 className="font-semibold font-[family-name:var(--font-montserrat)] mb-4">Información de Contacto</h3>
+              <div className="space-y-2 text-muted-foreground">
+                <div className="flex items-center space-x-2">
+                  <Mail className="w-4 h-4" />
+                  <span>sequens.social@outlook.cl</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Phone className="w-4 h-4" />
+                  <span>+56 9 XXXX XXXX</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <MapPin className="w-4 h-4" />
+                  <span>Valparaíso, Chile</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span>📱</span>
+                  <a
+                    href="https://www.linkedin.com/company/sequenscl/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span>📷</span>
+                  <a
+                    href="https://www.instagram.com/sequens_group/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Instagram
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div>
               <h3 className="font-semibold font-[family-name:var(--font-montserrat)] mb-4">Navegación</h3>
               <div className="space-y-2">
-                <Link href="/" className="block text-muted-foreground hover:text-primary transition-colors">
-                  Inicio
-                </Link>
                 <Link href="/#features" className="block text-muted-foreground hover:text-primary transition-colors">
                   Características
                 </Link>
                 <Link href="/equipo" className="block text-muted-foreground hover:text-primary transition-colors">
-                  Equipo
+                  Equipo de Desarrollo
+                </Link>
+                <Link href="/#mision" className="block text-muted-foreground hover:text-primary transition-colors">
+                  Misión y Valores
                 </Link>
                 <Link href="/#contact" className="block text-muted-foreground hover:text-primary transition-colors">
                   Contacto
                 </Link>
               </div>
             </div>
-
-            <div>
-              <h3 className="font-semibold font-[family-name:var(--font-montserrat)] mb-4">Contacto</h3>
-              <div className="space-y-2 text-muted-foreground">
-                <div className="flex items-center space-x-2">
-                  <Mail className="w-4 h-4" />
-                  <span>equipo@sequens.cl</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Github className="w-4 h-4" />
-                  <span>github.com/sequens-team</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2025 Sequens Team. Todos los derechos reservados. Feria del Software 2025.</p>
           </div>
         </div>
       </footer>

@@ -31,6 +31,16 @@ export default function HomePage() {
                 <p className="text-sm text-muted-foreground">Feria del Software 2025</p>
               </div>
             </Link>
+            
+            {/* Center Logo */}
+            <div className="hidden md:flex items-center justify-center">
+              <div className="w-16 h-16 flex items-center justify-center">
+                <Link href="https://www.feriadesoftware.cl/" className="flex items-center space-x-4">
+                  <Image src="/ferialogo.png" alt="Feria Logo" width={64} height={64} className="object-contain" />
+                </Link>
+              </div>
+            </div>
+            
             <nav className="hidden md:flex items-center space-x-6">
               <a href="#features" className="text-foreground hover:text-primary transition-colors font-medium">
                 Características
@@ -50,13 +60,13 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-background to-muted">
+      <section className="py-20 px-4 bg-gradient-to-br from-background to-muted color">
         <div className="container mx-auto text-center">
           <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">Feria del Software 2025</Badge>
-          <h1 className="text-5xl md:text-7xl font-black font-[family-name:var(--font-montserrat)] text-foreground mb-6 text-balance">
-            Transforma tu <span className="text-primary">Incubadora</span> con Sequens
+          <h1 className="text-5xl md:text-7xl font-white font-[family-name:var(--font-montserrat)] text-black mb-6 text-balance drop-shadow-lg">
+            Transforma tu <span className="text-primary-foreground drop-shadow-lg text-purple-500">Incubadora</span> con Sequens
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty leading-relaxed">
+          <p className="text-xl text-black/90 mb-8 max-w-3xl mx-auto text-pretty leading-relaxed drop-shadow-md">
             La plataforma definitiva para gestionar incubadoras de negocios. Automatiza documentación, contratos y
             seguimiento de proyectos con eficiencia profesional.
           </p>
@@ -81,10 +91,10 @@ export default function HomePage() {
       <section id="features" className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black font-[family-name:var(--font-montserrat)] text-foreground mb-4 text-balance">
+            <h2 className="text-4xl font-black font-[family-name:var(--font-montserrat)] text-white mb-4 text-balance">
               Revoluciona la Gestión de tu Incubadora
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
               Sequens elimina la carga administrativa y potencia la eficiencia operativa
             </p>
           </div>
@@ -221,7 +231,7 @@ export default function HomePage() {
           {/* ODS Section */}
           <div className="mt-16 text-center">
             <h3 className="text-2xl font-black font-[family-name:var(--font-montserrat)] text-foreground mb-6">
-              Objetivos de Desarrollo Sostenible
+              Objetivo de Desarrollo Sostenible
             </h3>
             {/* ODS 9 Image */}
             <div className="mt-6 flex justify-center">
@@ -237,31 +247,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section 
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl font-black font-[family-name:var(--font-montserrat)] text-primary mb-2">
+              <div className="text-4xl font-black font-[family-name:var(--font-montserrat)] text-white mb-2">
                 100%
               </div>
-              <p className="text-muted-foreground">Automatización de Procesos</p>
+              <p className="text-white/80">Automatización de Procesos</p>
             </div>
             <div>
-              <div className="text-4xl font-black font-[family-name:var(--font-montserrat)] text-primary mb-2">
+              <div className="text-4xl font-black font-[family-name:var(--font-montserrat)] text-white mb-2">
                 2025
               </div>
-              <p className="text-muted-foreground">Feria del Software</p>
+              <p className="text-white/80">Feria del Software</p>
             </div>
             <div>
-              <div className="text-4xl font-black font-[family-name:var(--font-montserrat)] text-primary mb-2">
+              <div className="text-4xl font-black font-[family-name:var(--font-montserrat)] text-white mb-2">
                 24/7
               </div>
-              <p className="text-muted-foreground">Disponibilidad del Sistema</p>
+              <p className="text-white/80">Disponibilidad del Sistema</p>
             </div>
           </div>
         </div>
       </section>
+      */}
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-primary text-primary-foreground">
@@ -275,7 +286,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/sequenscl/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-primary-foreground text-primary rounded-lg font-medium hover:bg-opacity-90 transition-colors"
@@ -283,7 +294,7 @@ export default function HomePage() {
               LinkedIn
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/sequens_group/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-primary-foreground text-primary rounded-lg font-medium hover:bg-opacity-90 transition-colors"
@@ -315,15 +326,33 @@ export default function HomePage() {
               <div className="space-y-2 text-muted-foreground">
                 <div className="flex items-center space-x-2">
                   <Mail className="w-4 h-4" />
-                  <span>info@sequens.cl</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4" />
-                  <span>+56 9 XXXX XXXX</span>
+                  <span>sequens.social@outlook.cl</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="w-4 h-4" />
-                  <span>Santiago, Chile</span>
+                  <span>Valparaiso, Chile</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span>📱</span>
+                  <a
+                    href="https://www.linkedin.com/company/sequenscl/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span>📷</span>
+                  <a
+                    href="https://www.instagram.com/sequens_group/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Instagram
+                  </a>
                 </div>
               </div>
             </div>
@@ -345,10 +374,6 @@ export default function HomePage() {
                 </a>
               </div>
             </div>
-          </div>
-
-          <div className="border-t mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2025 Sequens. Todos los derechos reservados. Feria del Software 2025.</p>
           </div>
         </div>
       </footer>
