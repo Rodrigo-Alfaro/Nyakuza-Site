@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export default function EquipoPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-primary via-secondary to-accent">
       {/* Header */}
       <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
@@ -50,7 +50,7 @@ export default function EquipoPage() {
 
       {/* Back Button */}
       <div className="container mx-auto px-4 py-6">
-        <Link href="/" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors">
+        <Link href="/" className="inline-flex items-center text-white hover:text-primary transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Volver al inicio
         </Link>
@@ -108,7 +108,7 @@ export default function EquipoPage() {
                   <Users className="w-16 h-16 text-white" />
                 </div>
                 <CardTitle className="font-[family-name:var(--font-montserrat)] text-xl">Rodolfo Osorio</CardTitle>
-                <CardDescription className="text-primary font-medium mb-6">Backend Scrum Master</CardDescription>
+                <CardDescription className="text-primary font-medium mb-6">Scrum Master</CardDescription>
                 <Button asChild variant="outline" size="lg" className="w-full">
                   <a
                     href="https://www.linkedin.com/in/rodolfo-osorio-verdejo-271275238/"
@@ -287,10 +287,6 @@ export default function EquipoPage() {
                 <div className="flex items-center space-x-2">
                   <Mail className="w-4 h-4" />
                   <span>sequens.social@outlook.cl</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4" />
-                  <span>+56 9 XXXX XXXX</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="w-4 h-4" />
